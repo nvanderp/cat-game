@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="bootstrap-practice.css">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"> <!-- fonts -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="container" class="container">
+
+        <!-- Game board row -->
+        <div class="row">
+            <div class="col-xs-1" align="center">
+                <div id="board-container">
+                    <table id="table-of-tiles"></table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Character card row -->
+        <div class="row">
+            <div id="bottom-background" class="fixed-bottom"></div>
+            <!-- Character card column; the card itself -->
+            <div class="col">
+                <div id="character-card" class="container fixed-bottom" >
+                    <form name="character-creation" method="post" action="javascript:void(0);" onsubmit="return characterCreation()">
+                        <!-- Input/submit button for character creation -->
+                        <input id="char-creation-button" class="fixed-bottom" type="submit">
+                        <!-- Character name -->
+                        <div id="character-name-container" class="row" data-container="body" data-toggle="popover" data-trigger="manual" data-placement="left" data-content="Enter a name!">
+                            <input type="text" name="character-name" placeholder="Enter Name" maxlength="15">
+                        </div>
+                        <!-- Character portrait -->
+                        <div id="character-portrait">
+                            <div id="character-model"></div>
+                        </div>
+                        <!-- Character healh and sanity -->
+                        <div id="character-hlth">
+                            <div class="health-slot"></div>
+                            <div class="health-slot"></div>
+                            <div class="health-slot"></div>
+                            <div class="health-slot"></div>
+                            <div class="health-slot"></div>
+                            <div class="health-slot"></div>
+                            <div class="health-slot"></div>
+                            <div class="health-slot"></div>
+                            <div class="health-slot"></div>
+                            <div class="health-slot"></div>
+                            <div class="health-slot"></div>
+                            <div class="health-slot"></div>
+                            <div class="health-slot"></div>
+                            <div class="health-slot"></div>
+                            <div class="health-slot"></div>
+                            <div class="health-slot"></div>
+                        </div>
+                        <div id="character-snty">
+                            <div class="sanity-slot"></div>
+                            <div class="sanity-slot"></div>
+                            <div class="sanity-slot"></div>
+                            <div class="sanity-slot"></div>
+                            <div class="sanity-slot"></div>
+                            <div class="sanity-slot"></div>
+                            <div class="sanity-slot"></div>
+                            <div class="sanity-slot"></div>
+                            <div class="sanity-slot"></div>
+                            <div class="sanity-slot"></div>
+                            <div class="sanity-slot"></div>
+                            <div class="sanity-slot"></div>
+                            <div class="sanity-slot"></div>
+                            <div class="sanity-slot"></div>
+                            <div class="sanity-slot"></div>
+                            <div class="sanity-slot"></div>
+                        </div>
+                        <!-- Character stats -->
+                        <div id="character-stat-container" class="row">
+                            <!-- Character stat text -->
+                            <div id="stat-container-text" class="col">
+                                <div class="stat-text">
+                                    Str
+                                </div>
+                                <div class="stat-text">
+                                    End
+                                </div>
+                                <div class="stat-text">
+                                    Agl
+                                </div>
+                                <div class="stat-text">
+                                    Int
+                                </div>
+                                <div class="stat-text">
+                                    Chr
+                                </div>
+                                <div class="stat-text">
+                                    Lck
+                                </div>
+                            </div>
+                            <!-- Character stat number tokens -->
+                            <div id="stat-container-numbers" class="col">
+                                <div id="str-stat" class="stat-slot"></div>
+                                <div id="end-stat" class="stat-slot"></div>
+                                <div id="agl-stat" class="stat-slot"></div>
+                                <div id="int-stat" class="stat-slot"></div>
+                                <div id="chr-stat" class="stat-slot"></div>
+                                <div id="lck-stat" class="stat-slot"></div>                  
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Character inventory and spells -->
+                    <div id="inventory-text">Inventory</div>
+                    <div id="inventory-container-one">
+                        <div class="inventory-slot"></div>
+                        <div class="inventory-slot"></div>
+                        <div class="inventory-slot"></div>
+                        <div class="inventory-slot"></div>
+                        <div class="inventory-slot"></div>
+                        <div class="inventory-slot"></div>
+                    </div>
+                    <div id="inventory-container-two">
+                        <div class="inventory-slot"></div>
+                        <div class="inventory-slot"></div>
+                        <div class="inventory-slot"></div>
+                        <div class="inventory-slot"></div>
+                        <div class="inventory-slot"></div>
+                        <div class="inventory-slot"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Character card stat token holder -->
+            <div class="col">
+                <div id="stat-token-container" class="container-fluid fixed-bottom" data-container="body" data-toggle="popover" data-trigger="manual" data-placement="top" data-content="Allot your stats!">
+                    <div id="six-stat-token" class="stat-token"></div>
+                    <div id="five-stat-token" class="stat-token"></div>
+                    <div id="four-stat-token" class="stat-token"></div>
+                    <div id="three-stat-token" class="stat-token"></div>
+                    <div id="two-stat-token" class="stat-token"></div>
+                    <div id="one-stat-token" class="stat-token"></div>
+                    <div id="one-stat-token" class="stat-token"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="jquery.scrollTo-2.1.2/jquery.scrollTo.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script type='text/javascript' src='bootstrap-practice.js'></script>
+    </body>
+</html>

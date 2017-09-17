@@ -1,0 +1,376 @@
+body {
+    background-image: url("images/sky.png");
+    width: 100%;
+    height: 100%;
+}
+
+table td {
+    padding: 0;
+}
+
+#board-container {
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    margin-bottom: 200px;
+}
+
+#bottom-background {
+    background-image: url("images/treeBackground.png");
+    width: 100%;
+    height: 375px;
+}
+
+.popover-content {
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    text-align: center;
+    border: 3px black solid;
+    background-color: white;
+}
+
+#char-creation-button {
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    background-color: lightcoral;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    left: 145px;
+    bottom: 540px;
+}
+
+#character-card {
+    width: 375px;
+    height: 525px;
+    background-image: url("images/newCharCard.png");
+    font-family: 'VT323', monospace;
+    margin-bottom: 50px;
+}
+
+.character-menu:hover {
+    cursor: pointer;
+    box-shadow: inset 0 0 3px 3px white;
+}
+
+#character-name-container {
+    position: absolute;
+    font-size: 30px;
+    text-align: center;
+    width: 301px;
+    height: 50px;
+    top: 30px;
+    left: 75px;
+}
+
+input[type=text] {
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    text-align: center;
+    border: none;
+    background: transparent;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
+
+#character-portrait {
+    width: 116px;
+    height: 203px;
+    position: absolute;
+    left: 37px;
+    top: 97px;
+    padding-top: 25px;
+    padding-left: 1px;
+}
+
+#character-model {
+    background-image: url("images/cat_idle.png");
+    width: 108px;
+    height: 156px;
+}
+
+#character-hlth {
+    position: absolute;
+    width: 39px;
+    height: 161px;
+    top: 113px;
+    left: 165px;
+    padding-left: 4px;
+}
+
+.health-slot {
+    width: 31px;
+    height: 10px;
+}
+
+.health-token {
+    background-color: red;
+    width: 31px;
+    height: 10px;
+}
+
+#character-snty {
+    position: absolute;
+    width: 39px;
+    height: 161px;
+    top: 113px;
+    left: 209px;
+    padding-left: 4px;
+}
+
+.sanity-slot {
+    width: 31px;
+    height: 10px;
+}
+
+.sanity-token {
+    background-color: blue;
+    width: 31px;
+    height: 10px;
+}
+
+#character-stat-container {
+    position: absolute;
+    width: 82px;
+    height: 202px;
+    top: 97px;
+    left: 275px;
+}
+
+#stat-container-text {
+    font-size: 22px;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    margin-left: -10px;
+    margin-top: 16px;
+}
+
+.stat-text {
+    margin-top: -4px;
+}
+
+#stat-container-numbers {
+    width: 50%;
+    height: 100%;
+    margin-right: 5px;
+    margin-top: 14px;
+}
+
+.stat-slot {
+    width: 29px;
+    height: 29px;
+}
+
+#stat-token-container {
+    width: 68px;
+    height: 241px;
+    background-image: url("images/statTokenContainer.png");
+    left: 430px;
+    bottom: 205px;
+    padding-top: 19px;
+    padding-left: 19px;
+    margin-bottom: 50px;
+}
+
+.stat-token {
+    width: 29px;
+    height: 29px;
+}
+
+.stat-token:hover {
+    cursor: pointer;
+}
+
+#six-stat-token {
+    background-image: url("images/sixToken.png");
+}
+
+.six {
+    background-image: url("images/sixToken.png");
+}
+
+#five-stat-token {
+    background-image: url("images/fiveToken.png");
+}
+
+.five {
+    background-image: url("images/fiveToken.png");
+}
+
+#four-stat-token {
+    background-image: url("images/fourToken.png");
+}
+
+.four {
+    background-image: url("images/fourToken.png");
+}
+
+#three-stat-token {
+    background-image: url("images/threeToken.png");
+}
+
+.three {
+    background-image: url("images/threeToken.png");
+}
+
+#two-stat-token {
+    background-image: url("images/twoToken.png");
+}
+
+.two {
+    background-image: url("images/twoToken.png");
+}
+
+#one-stat-token {
+    background-image: url("images/oneToken.png");
+}
+
+.one {
+    background-image: url("images/oneToken.png");
+}
+
+#inventory-text {
+    font-family: 'VT323', monospace;
+    font-size: 25px;
+    position: absolute;
+    width: 119px;
+    height: 30px;
+    bottom: 195px;
+    left: 142px;
+}
+
+#inventory-container-one {
+    position: absolute;
+    width: 125px;
+    height: 132px;
+    left: 50px;
+    top: 351px;
+}
+
+#inventory-container-two {
+    position: absolute;
+    width: 125px;
+    height: 132px;
+    left: 202px;
+    top: 351px;
+}
+
+.inventory-slot {
+    width: 100%;
+    height: 17px;
+    margin-bottom: 5px;
+}
+
+#player {
+    width: 50px;
+    height: 46px;
+    background-image: url("images/playerToken.png");
+}
+
+.tile {
+    width: 200px;
+    height: 200px;
+    padding: 75px;
+    padding-top: 90px;
+}
+
+.tile:hover {
+    box-shadow: inset 0 0 3px 3px white;
+}
+
+.temp-tile {
+    background-color: grey;
+    width: 200px;
+    height: 200px;
+}
+
+.temp-tile:hover {
+    box-shadow: inset 0 0 3px 3px white;
+}
+
+.home {
+    background-image: url("images/homeTile.png");
+}
+
+.tLeft {
+    background-image: url("images/tLeftTile.png");
+}
+
+.tUp {
+    background-image: url("images/tUpTile.png");
+}
+
+.tDown {
+    background-image: url("images/tDownTile.png");
+}
+
+.tRight {
+    background-image: url("images/tRightTile.png");
+}
+
+.fourWay {
+    background-image: url("images/fourWayTile.png");
+}
+
+.upDown {
+    background-image: url("images/upDownTile.png");
+}
+
+.leftRight {
+    background-image: url("images/leftRightTile.png");
+}
+
+.leftRightCave {
+    background-image: url("images/leftRightCaveTile.png");
+}
+
+.tRightCamp {
+    background-image: url("images/tRightCampTile.png");
+}
+
+.leftEnd {
+    background-image: url("images/leftEndTile.png");
+}
+
+.rightEnd {
+    background-image: url("images/rightEndTile.png");
+}
+
+.topEnd {
+    background-image: url("images/topEndTile.png");
+}
+
+.bottomEnd {
+    background-image: url("images/bottomEndTile.png");
+}
+
+.tDownTower {
+    background-image: url("images/tDownTowerTile.png");
+}
+
+.tLeftStoneTower {
+    background-image: url("images/tLeftStoneTowerTile.png");
+}
+
+.lake {
+    background-image: url("images/lakeTile.png");
+}
+
+.forest {
+    background-image: url("images/forestTile.png");
+}
+
+.river {
+    background-image: url("images/riverTile.png");
+}
+
+.ldCorner {
+    background-image: url("images/ldCornerTile.png");
+}
+
+.rdCorner {
+    background-image: url("images/rdCornerTile.png");
+}
