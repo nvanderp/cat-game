@@ -12,6 +12,7 @@ table td {
     width: 100%;
     height: 100%;
     margin-top: 50px;
+    margin-left: 250px;
     margin-bottom: 200px;
 }
 
@@ -48,9 +49,14 @@ table td {
     margin-bottom: 50px;
 }
 
+.character-menu {
+    opacity: .5;
+}
+
 .character-menu:hover {
     cursor: pointer;
     box-shadow: inset 0 0 3px 3px white;
+    opacity: 1;
 }
 
 #character-name-container {

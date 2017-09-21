@@ -114,7 +114,7 @@ var rdCorner = new Tile (
 // ARRAY OF ALL TILES
 
 var tileArray = new Array (
-    home, fourWay, tLeft, tUp, tRight, tDown, upDown, leftRight, leftRightCave, tRightCamp, 
+    home, fourWay, tLeft, tUp, tRight, tDown, upDown, leftRight, leftRightCave, tRightCamp,
     leftEnd, rightEnd, topEnd, bottomEnd, tDownTower, tLeftStoneTower, lake, forest, river,
     ldCorner, rdCorner
 );
@@ -188,7 +188,7 @@ function tempToTile(div, cell) {
             }).popover("show");
             leftDEmpty = true;
             removeTempTiles();
-        };  
+        };
     }
     else if ($(div).hasClass("fromLeft")) {
         newTileArray.forEach(function(tile) {
@@ -217,7 +217,7 @@ function tempToTile(div, cell) {
             }).popover("show");
             rightDEmpty = true;
             removeTempTiles();
-        };  
+        };
     }
     else if ($(div).hasClass("fromBottom")) {
         newTileArray.forEach(function(tile) {
@@ -246,7 +246,7 @@ function tempToTile(div, cell) {
             }).popover("show");
             topDEmpty = true;
             removeTempTiles();
-        };  
+        };
     }
     else if ($(div).hasClass("fromTop")) {
         newTileArray.forEach(function(tile) {
@@ -275,7 +275,7 @@ function tempToTile(div, cell) {
             }).popover("show");
             bottomDEmpty = true;
             removeTempTiles();
-        };  
+        };
     };
 };
 
@@ -325,7 +325,7 @@ function temporaryTilePlacement(tile) {
         };
         splitParent = parentCell.split("_");
     };
-    $(window).scrollTo($("#player"), 40, {offset: -350});
+    $(window).scrollTo($("#player"), 40, {offset: {left: -550, top: -300}});
 };
 
 function startingPieces() {
@@ -433,7 +433,7 @@ function Player (
     };
     this.placement = function() {
         $(this.curLoc).append(this.div);
-        $(window).scrollTo($("#player"), 40, {offset: -350}); ////////////////////////
+        $(window).scrollTo($("#player"), 40, {offset: {left: -550, top: -300}}); ////////////////////////
     };
     this.adjacent = function(cell) {
         var playerCell = $(this.curLoc).parent().attr('id');
@@ -523,11 +523,12 @@ function characterCreation() {
         };
     });
     $("#character-card").animate({
+        marginLeft: "0px",
         marginBottom: "-220px",
     }, 1500);
     $("#character-card").addClass("character-menu");
     $("#bottom-background").animate({
-        marginBottom: "-220px",
+        marginBottom: "-270px",
     }, 1500);
     $("#character-card").addClass("character-menu");
     player.fetchPlayerCurrentStats();
@@ -659,7 +660,7 @@ $(document).ready(function() {
             tempToTile(curDiv, currentCell);
         }
         else {
-            $(window).scrollTo($("#player"), 40, {offset: -350});
+            $(window).scrollTo($("#player"), 40, {offset: {left: -550, top: -300}});
             $("#player").popover({
                 'placement': 'bottom',
                 'delay': {
@@ -682,9 +683,9 @@ $(document).ready(function() {
         }
         if (player.adjacent(currentCell) === true) {
             player.moveToOld(curDivjID);
-        } 
+        }
         else {
-            $(window).scrollTo($("#player"), 40, {offset: -350});
+            $(window).scrollTo($("#player"), 40, {offset: {left: -550, top: -300}});
             $("#player").popover({
                 'placement': 'bottom',
                 'delay': {
@@ -697,6 +698,6 @@ $(document).ready(function() {
         };
     });
     $("#character-portrait").on("click", function() {
-        $(window).scrollTo($("#player"), 40, {offset: -350});
+        $(window).scrollTo($("#player"), 40, {offset: {left: -550, top: -300}});
     });
 });
